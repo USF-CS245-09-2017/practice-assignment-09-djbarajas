@@ -29,8 +29,8 @@ public class BinaryHeap {
         data[j] = temp;
     }
 
-    public int remove(){
-        Assert.not_false(size != 0);
+    public int remove()  {
+        //Assert.not_false(size != 0);
         swap(data,size-1,0);
         --size;
         if(size > 0){
@@ -42,8 +42,8 @@ public class BinaryHeap {
     private void shiftDown(int pos) {
         int child;
         while(!(isLeaf(pos))){
-            child = pos*2;
-            if((child < size) && (data[child] > data[child+1])){
+            child = pos*2+1;
+            if((child < size-1) && (data[child] > data[child+1])){
                 child = child+1;
             }
             if(data[pos] <= data[child]) {
@@ -55,7 +55,7 @@ public class BinaryHeap {
     }
 
     private boolean isLeaf(int pos){
-        return ((pos > size/2)&& pos <= size);
+        return ((pos >= (size)/2) && pos < size);
     }
 
 

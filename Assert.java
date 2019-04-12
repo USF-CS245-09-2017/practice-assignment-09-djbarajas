@@ -1,4 +1,7 @@
 public class Assert {
-    public static void not_false(boolean b) {
+    public static boolean not_false(boolean condition) throws Exception {
+        if(condition)
+            return true;
+        throw new Exception("Error");
     }
 }
