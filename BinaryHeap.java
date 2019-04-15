@@ -46,12 +46,16 @@ public class BinaryHeap {
     * if the size is grater than 0 then do the shift down method which checks if
     * the children are smaller than the parent and swaps when necessary
      */
-    public int remove() {
-        //Assert.not_false(size != 0);
-        swap(data,size-1,0);
-        --size;
-        if(size > 0){
-            shiftDown(0);
+    public int remove(){
+        try {
+            Assert.not_false(size != 0);
+            swap(data, size - 1, 0);
+            --size;
+            if (size > 0) {
+                shiftDown(0);
+            }
+        } catch (Exception e){
+            System.out.println("Error");
         }
         return data[size];
     }
