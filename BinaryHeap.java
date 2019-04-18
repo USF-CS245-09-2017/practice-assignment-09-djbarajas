@@ -49,7 +49,7 @@ public class BinaryHeap {
     public int remove() {
 
         try {
-            Assert.not_false(size != 0);
+            Assert.not_false(size != 0); //because remove should throw an error if the Heap is empty
             swap(data, size - 1, 0);
             --size;
             if (size > 0) {
