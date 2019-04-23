@@ -185,11 +185,76 @@ public class Practice09Test {
 		System.out.println("-----------------------------------------");
 		System.out.println("Starting point for this assignment: " + grade + "%.");
 	}
-	
+
 
 	public static void main(String[] args) {
 		Practice09Test test = new Practice09Test();
 		test.runTests();
-	}
+	}/*
+    private static boolean test(BinaryHeap heap, int expect, int flag) {
+        int ele = heap.remove();
+        if (ele != expect) {
+            System.out.println("Incorrect!!! ---- actual: " + ele + "\texpected: " + expect);
+            return false;
+        }
+        return true;
+    }
 
+    private static boolean testException(BinaryHeap heap, int flag) {
+        try {
+            heap.remove();
+            System.out.println("!!! FAIL to throw exception \t flag - " + flag + "!!!");
+            return false;
+        } catch (NoSuchElementException e) {
+            System.out.println("--- pass test exception \t flag - " + flag + "---");
+            return true;
+        }
+    }
+
+    public static void main(String[] args) {
+        boolean pass = true;
+        int flag = -1;
+        BinaryHeap heap = new BinaryHeap();
+        int[][] a = new int[][]{
+                {1},
+                {20, 45, 26, 42, 51, 10, 22, 40, 30, 52, 50, 28},
+                {3, 1},
+                {2, 3, 4, 5, 1, 6}
+        };
+        for (int x = 0; x < a.length; x++) {
+            flag = x;
+            int[] temp = a[x];
+            for (int t : temp) {
+                heap.add(t);
+            }
+            int[] copy = new int[temp.length];
+            System.arraycopy(temp, 0, copy, 0, temp.length);
+            Arrays.sort(copy);
+            for (int i = 0; i < copy.length; i++) {
+                pass = pass && test(heap, copy[i], flag);
+            }
+            pass = pass && testException(heap, flag);
+        }
+
+        int[] b = new int[]{12, 11, 10, 9};
+        for (int k : b) {
+            heap.add(k);
+        }
+        flag = 100;
+        pass = pass && test(heap, 9, flag);
+        flag = 101;
+        pass = pass && test(heap, 10, flag);
+
+        b = new int[]{8, 7, 6, 5, 4, 3, 2, 1, 0};
+        for (int k : b) {
+            heap.add(k);
+        }
+        b = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 12};
+        for (int i = 0; i < b.length; i++) {
+            flag = 200 + i;
+            pass = pass && test(heap, b[i], flag);
+        }
+        pass = pass && testException(heap, flag);
+        System.out.println(pass ? "---PASS---" : "FAIL!!!");
+    }*/
 }
